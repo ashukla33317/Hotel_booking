@@ -13,11 +13,11 @@ class Customer_details(models.Model):
 
 
 
-class Hotel_booking(models.Model):
-    customer_name=models.CharField(max_length=20)
-    customer_age=models.IntegerField()
-    email=models.EmailField()
-    phone_number=models.CharField(max_length=20)
-    appointment_date=models.DateField()
-    state=models.CharField(max_length=10)
-    city=models.CharField(max_length=10)    
+# class Hotel_booking(models.Model):
+#     customer_name=models.CharField(max_length=20)
+#     customer_age=models.IntegerField()
+#     email=models.EmailField()
+#     phone_number=models.CharField(max_length=20)
+#     appointment_date=models.DateField()
+#     state=models.CharField(max_length=10)
+#     city=models.CharField(max_length=10)    

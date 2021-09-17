@@ -10,15 +10,15 @@
     <ul>
         <li><a href="/">Home</a></li>
         {% if request.user.is_authenticated %}
-        <li><a href="add_customer">Customer</a></li>
+        <li><a href="/add_customer">Customer</a></li>
         
-        <li><a href="logout">LOgout</a></li>
-        <li><a href="views_appointment">view</a></li>
+        <li><a href="/logout">LOgout</a></li>
+        <li><a href="/views_appointment">view</a></li>
         
         
         {% else %}
-        <li><a href="login">LOgin</a></li>
-        <li><a href="booking">Hotel booking</a></li>
+        <li><a href="/login">LOgin</a></li>
+        <!-- <li><a href="/booking">Hotel booking</a></li> -->
         {% endif %}
     </ul>
 

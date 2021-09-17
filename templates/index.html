@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
 <table>
     <tr>
         <th>Sr no.</th>
@@ -13,7 +14,7 @@
     {% for detail in customer_details %}
     <tr>
         <td id="mobile_number">{{detail.id}}</td>
-        <td><a href="details/?customer_id={{detail.id}}">{{detail.customer_name}}</a></td>
+        <td><a href="/details/?customer_id={{detail.id}}">{{detail.customer_name}}</a></td>
         <td>{{detail.payment_detail}}</td>
         <td>{{detail.address}}</td>
         <td>{{detail.state}}</td>
@@ -22,4 +23,5 @@
     </tr>
     {% endfor %}
 </table>
+{% endif %}
 {% endblock %}

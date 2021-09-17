@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.views import  View
 from customer import forms, models
 from customer.forms import Customer_form
-from customer.models import Customer_details, Hotel_booking
+from customer.models import Customer_details
 from django.contrib.auth.models import auth,User
 # from django .contrib import auth
 from .import forms
@@ -16,6 +16,7 @@ class Home(View):
 
         }
         return render(request,'index.html',content)
+
 
 class Login_forms(View):
     def get(self,request):
@@ -38,7 +39,7 @@ class Display(View):
     def get(self,request):
         if request.user.is_authenticated:
             content={
-                'hotel_booking':Hotel_booking.objects.all()
+                'hotel_booking':Customer_details.objects.all()
             }
             page='display_page.html'
             return render(request,page,content)

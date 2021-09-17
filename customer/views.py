@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.views import View
 from . import forms
 from . import models
+import customer
 # Create your views here.
 
 class Customer_form(View):
@@ -36,38 +37,11 @@ class Customer_form(View):
             print(new_details)
             return redirect('/')    
 
+
 class Details(View):
     def get(self,request):
-        # customer_id = request.GET['customer_id']
+        customer_id = request.GET['customer_id']
         content={
-            'customer_details':models.Customer_details.objects.all()
+            'customer_details':models.Customer_details.objects.get(id=customer_id)
         }
         return render(request,'update_info.html',content)
-
-class Hotel_booking(View):
-    def get(self,request):
-        content={
-            'hotel_booking':forms.Hotel_book()
-        }
-        return render(request,'hotel_booking.html',content)
-
-    def post(self,request):
-        customer_name=request.POST['customer_name']
-        phone_number=request.POST['phone_number']
-        customer_age=request.POST['customer_age']
-        state=request.POST['state']
-        email=request.POST['email']
-        city=request.POST['city']
-        appointment_date=request.POST['appointment_date']
-        book_hotel=models.Hotel_booking(
-        customer_name=customer_name,
-        phone_number=phone_number,
-        state=state,
-        email=email,
-        city=city,
-        customer_age=customer_age,
-        appointment_date=appointment_date
-        )
-
-        book_hotel.save()
-        return redirect('/')
