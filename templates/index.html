@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Sr no.</th>
+        <th>customer name</th>
+        <th>payment_detail</th>
+        <th>address</th>
+        <th>state</th>
+        <th>city</th>
+    </tr>
+    {% for detail in customer_details %}
+    <tr>
+        <td id="mobile_number">{{detail.id}}</td>
+        <td><a href="details/?customer_id={{detail.id}}">{{detail.customer_name}}</a></td>
+        <td>{{detail.payment_detail}}</td>
+        <td>{{detail.address}}</td>
+        <td>{{detail.state}}</td>
+        <td>{{detail.city}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

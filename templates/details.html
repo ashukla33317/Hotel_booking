@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<label for="">Name:{{customer_details.customer_name}}</label><br>
+<label for="">mobile_number:{{customer_details.mobile_number}}</label><br>
+<label for="">State:{{customer_details.state}}</label><br>
+<label for="">city:{{customer_details.city}}</label><br>
+<label for="">Email:{{customer_details.email}}</label><br>
+<label for="">Address:{{customer_details.address}}</label><br>
+<!-- <label for="">payment:{{customer_details.check_in_date}}</label>
+<label for="">payment:{{customer_details.check_out_date}}</label> -->
+<label for="">payment:{{customer_details.payment_detail}}</label><br>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="add_customer" method="POST">
+    {% csrf_token %}
+    <label for="">Name:{{add_customer.customer_name}}</label><br>
+    <label for="">mobile_number:{{add_customer.mobile_number}}</label><br>
+    <label for="">State:{{add_customer.state}}</label><br>
+    <label for="">city:{{add_customer.city}}</label><br>
+    <label for="">Email:{{add_customer.email}}</label><br>
+    <label for="">Address:{{add_customer.address}}</label><br>
+    <!-- <label for="">payment:{{add_customer.check_in_date}}</label>
+    <label for="">payment:{{add_customer.check_out_date}}</label> -->
+    <label for="">payment:{{add_customer.payment_detail}}</label><br>
+    <button type="submit">Register Now</button>
+</form>
+
+{% endblock %}

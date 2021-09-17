@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>sr. no</th>
+        <th>Name</th>
+        <th>phone_number</th>
+        <th>Age</th>
+        <th>email</th>
+        <th>city</th>
+        <th>state</th>
+        <th>Appointment_date</th>
+    </tr>
+    {% for display in hotel_booking %}
+    <tr>
+        <td>{{display.id}}</td>
+        <td>{{display.customer_name}}</td>
+        <td>{{display.phone_number}}</td>
+        <td>{{display.customer_age}}</td>
+        <td>{{display.email}}</td>
+        <td>{{display.city}}</td>
+        <td>{{display.state}}</td>
+        <td>{{display.appointment_date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
