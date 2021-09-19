@@ -4,9 +4,9 @@ from customer import forms, models
 from customer.forms import Customer_form
 from customer.models import Customer_details
 from django.contrib.auth.models import auth,User
-# from django .contrib import auth
+
 from .import forms
-# Create your views here.
+
 class Home(View):
     def get(self,request):
         content={
