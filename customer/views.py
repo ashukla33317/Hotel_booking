@@ -4,7 +4,6 @@ from django.views import View
 from . import forms
 from . import models
 import customer
-# Create your views here.
 
 class Customer_form(View):
     def get(self,request):
@@ -21,8 +20,7 @@ class Customer_form(View):
             state=request.POST['state']
             city=request.POST['city']
             email=request.POST['email']
-            # check_in_date=request.POST['check_in_date']
-            # check_out_date=request.POST['check_out_date']
+
             payment_detail=request.POST['payment_detail']
             new_details=models.Customer_details(
                 customer_name=customer_name,

@@ -10,8 +10,7 @@ class Customer_form(forms.Form):
     city=forms.CharField(max_length=10)
     email=forms.EmailField()
     payment_detail=forms.IntegerField()
-    # check_in_date=forms.DateInput(format = '%Y-%m-%d',attrs={'type': 'date'})
-    # check_out_date=forms.DateInput(format = '%Y-%m-%d',attrs={'type': 'date'})
+
 
 
 class Hotel_book(forms.Form):
